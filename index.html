@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/img/favicon.png">
+    <link rel="stylesheet" href="./assets/css/style.css"> <!-- icon by Freepik https://www.flaticon.com/authors/freepik  -->
+    <title>Sorteio</title>
+</head>
+<body>
+    <div class="modal__container">
+        <div class="input__modal">
+            <h2>Inserir Dados</h2>
+            <span>Informe os dados a serem inseridos, separados por virgula</span>
+            <textarea name="" id="input_text" placeholder="exemplo_1, exemplo_2, exemplo_3"></textarea>
+            <div class="button_wrapper">
+                <button class="default_button default_button--orange" onclick="close_modal()">Cancelar</button>
+                <button class="default_button" onclick="insert_data()">Adicionar</button>
+            </div>
+        </div>
+    </div>
+    <main class="main__container">
+        <header class="main__container_header">
+            <button class="main__container_header_button" onclick="display_modal()">Inserir Dados</button>
+        </header>
+        <button id="randomize_button" class="default_button" onclick="randomize_prepare()">Sortear</button>
+        <div class="animation_content">
+            <div class="anim_item anim_targ anim_item--red"></div>
+            <div class="anim_item anim_targ anim_item--green"></div>
+            <div class="anim_item anim_targ anim_item--blue"></div>
+            <div class="anim_item anim_targ anim_item--orange"></div>
+        </div>
+        <div class="main__container_randomized">
+            <input class="randomized_item" disabled>
+        </div>
+        <ul class="main__container_cardsList"></ul>
+    </main>
+  <script src="./assets/script/script.js"></script>
+</body>
+</html>
