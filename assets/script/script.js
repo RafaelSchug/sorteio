@@ -125,7 +125,7 @@ const randomize_prepare = ()=> {
 const display_modal = ()=>{
     
     modal.style.display = 'initial';
-    document.querySelector('#input_text').value = "x²+2x+1=0, x²+3x+2=0, x²+7x+12=0, x²+6x+5=0, x²+x=0, x²+5x+4=0 , 2x²+3x+1=0, 2x²+5x+2=0, 2x²+9x+9=0, 2x²+13x+15=0, x²-2x+1=0, x²-3x+2=0";
+    document.querySelector('#input_text').value = group.join(', ');
 }
 
 const close_modal = ()=>{
