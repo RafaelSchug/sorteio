@@ -113,8 +113,11 @@ const randomize_prepare = ()=> {
             update_button();
         }, 1000);
 
-    } else {
-       randomize();
+        return;
+    } 
+    
+    if(sorting === false && group_mirror.length === 0){
+        randomize();
     }
 }
 
