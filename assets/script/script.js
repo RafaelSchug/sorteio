@@ -14,7 +14,7 @@ let group = [
 ]
 
 let group_mirror = [...group];
-let sorting = false;
+let randomizing = false;
 
 const modal = document.querySelector('.modal__container');
 const cont = document.querySelector('.main__container');
@@ -86,7 +86,7 @@ const update_button = () => {
 const randomize_prepare = ()=> {
     document.querySelector('.randomized_item').value = "";
     
-    if(sorting === false && group_mirror.length > 0) {
+    if(randomizing === false && group_mirror.length > 0) {
     
         // Alterar botao
         let button = document.querySelector('#randomize_button');
@@ -103,20 +103,20 @@ const randomize_prepare = ()=> {
             })
         }, 10);
 
-        sorting = true;
+        randomizing = true;
         setTimeout(()=>{
             randomize();
             button.innerText = "Sortear";
             button.style.background = "";
             button.style.color = '';
-            sorting = false;
+            randomizing = false;
             update_button();
         }, 1000);
 
         return;
     } 
     
-    if(sorting === false && group_mirror.length === 0){
+    if(randomizing === false && group_mirror.length === 0){
         randomize();
     }
 }
