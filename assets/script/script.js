@@ -29,6 +29,8 @@ const display_content = () => {
         
         ul_elm.appendChild(new_li);
     }
+
+    document.querySelector('#content_colored').innerText = group_mirror.length;
 }
 
 display_content();
@@ -40,9 +42,12 @@ const update_display = (val) => {
     if(ul_elm.children.length > 0){
         document.querySelectorAll('.main__container_card')[val].style.flex = "0 0 0%";
         document.querySelectorAll('.main__container_card')[val].style.background = "red";
-        document.querySelectorAll('.main__container_card')[val].style.color = "white";
+
+        document.querySelector('#content_colored').innerText = group_mirror.length;
+        
         setTimeout(()=>{
             document.querySelectorAll('.main__container_card')[val].remove();
+            
         },500)
     }
 }
@@ -137,6 +142,20 @@ const insert_data = () => {
 
     display_content();
     close_modal();
+    document.querySelector('.randomized_item').value = "";
 }
 
+
+const toggle_data = ()=>{
+    let check = ul_elm.style.display;
+    let btn = document.querySelector('.button--left');
+
+    if(check === ''){
+        ul_elm.style.display = 'flex';
+        btn.innerText = "Ocultar Dados"
+    } else {
+        ul_elm.style.display = '';
+        btn.innerText = "Exibir Dados";
+    }
+}
 

@@ -22,7 +22,9 @@
     </div>
     <main class="main__container">
         <header class="main__container_header">
-            <button class="main__container_header_button" onclick="display_modal()">Inserir Dados</button>
+            <button class="main__container_header_button button--left" onclick="toggle_data()">Exibir Dados</button>
+            <span id="content_counter">Sorteios restantes: <span id="content_colored"></span> </span>
+            <button class="main__container_header_button button--right" onclick="display_modal()">Inserir Dados</button>
         </header>
         <button id="randomize_button" class="default_button" onclick="randomize_prepare()">Sortear</button>
         <div class="animation_content">

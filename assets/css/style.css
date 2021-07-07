@@ -137,6 +137,7 @@
     flex-wrap: wrap;
     justify-content: center;
     padding: 5px;
+    display: none;
 }
 
 .main__container_cardsList .main__container_card {
@@ -166,6 +167,22 @@
     height: 40px;
     margin: 0;
     position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main__container_header #content_counter {
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #cbcbcb;
+    color: #5f5c5c;
+    font-weight: bold;
+}
+
+#content_counter #content_colored{
+    color: #e87156;
 }
 
 .main__container_header_button {
@@ -173,16 +190,16 @@
     border-top: 0;
     height: 100%;
     width: 100px;
-    position: absolute;
-    right: 0;
     cursor: pointer;
     color: #5f5c5c;
     font-weight: bold;
+    min-width: 120px;
 }
 
 .main__container_header_button:hover {
     background: #e8e8e8;
 }
+
 
 
 /* MODAL CONTAINER */
