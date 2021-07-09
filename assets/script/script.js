@@ -15,6 +15,7 @@ let group = [
 
 let group_mirror = [...group];
 let randomizing = false;
+let randomized_items_counter = 0;
 
 const modal = document.querySelector('.modal__container');
 const cont = document.querySelector('.main__container');
@@ -60,12 +61,14 @@ const randomize = () => {
         document.querySelector('.randomized_item').value = "";
         display_content();
         update_button();
+        remove_randomized_items(); // Resetar a exibição dos sorteados
 
     } else {
 
         let randomN = Math.round(Math.random() * (group_mirror.length - 1));
 
         document.querySelector('.randomized_item').value = group_mirror[randomN];
+        list_randomized_items(group_mirror[randomN]);
         group_mirror.splice(group_mirror.indexOf(group_mirror[randomN]), 1);
 
         update_display(randomN);
@@ -121,6 +124,24 @@ const randomize_prepare = ()=> {
     }
 }
 
+const list_randomized_items = (val)=>{
+    // console.log(`%c${val}`, "color:white; background-color:#00ac01; padding:4px;");
+
+    const target = document.querySelector('.randomized_list');
+    const newEl = document.createElement('li');
+    newEl.className = "randomized_list_item";
+    newEl.innerHTML = `<span class='counter'>${++randomized_items_counter}º</span><span class='span_item'>${val}</span>`;
+
+    target.appendChild(newEl);
+}
+
+const remove_randomized_items = ()=>{
+    const target = document.querySelectorAll('.randomized_list_item');
+    target.forEach((e)=>{
+        e.remove();
+    })
+    randomized_items_counter = 0;
+}
 
 const display_modal = ()=>{
     
@@ -143,6 +164,7 @@ const insert_data = () => {
     group = [...data];
     group_mirror = [...data];
 
+    remove_randomized_items();
     display_content();
     close_modal();
     document.querySelector('.randomized_item').value = "";
@@ -162,3 +184,4 @@ const toggle_data = ()=>{
     }
 }
 
+// console.log("%cHello, Dev", "color:orange; background-color:black; padding:5px; font-weight:bold; font-size:12px; border-radius:4px; margin:10px;")
